@@ -1,0 +1,56 @@
+{
+    "_version": "1.12.0",
+    "sap.app": {
+      "id": "com.aamir.fiori.app.project1",
+      "type": "application",
+      "i18n": "i18n/i18n.properties",
+      "title": "Fiori Practice",
+      "description": "Fiori Practice Application",
+      "applicationVersion": {
+        "version": "1.0.0"
+      }
+    },
+    "sap.ui": {
+      "technology": "UI5",
+      "deviceTypes": {
+        "desktop": true,
+        "tablet": true,
+        "phone": true
+      }
+    },
+    "sap.ui5": {
+      "rootView": {
+        "viewName": "com.aamir.fiori.app.project1.view.App",
+        "type": "XML",
+        "id": "app"
+      },
+      "dependencies": {
+        "minUI5Version": "1.71",
+        "libs": {
+          "sap.ui.core": {},
+          "sap.m": {},
+          "sap.ui.layout": {}
+        }
+      },
+      "models": {
+        "": {
+          "type": "sap.ui.model.json.JSONModel",
+          "settings": {}
+        },
+        "userModel": {
+          "type": "sap.ui.model.json.JSONModel",
+          "settings": {}
+        },
+        "i18n": {
+          "type": "sap.ui.model.resource.ResourceModel",
+          "settings": {
+            "bundleName": "com.aamir.fiori.app.project1.i18n.i18n"
+          }
+        }
+      },
+      "contentDensities": {
+        "compact": true,
+        "cozy": true
+      }
+    }
+  }

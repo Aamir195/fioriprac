@@ -1,0 +1,27 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:form="sap.ui.layout.form">
+    <Dialog
+        title="Edit Entry"
+        contentWidth="400px">
+        <form:SimpleForm
+            editable="true"
+            layout="ResponsiveGridLayout">
+            <form:content>
+                <Label text="Name" required="true"/>
+                <Input value="{userModel>/editEntry/name}" placeholder="Enter Name"/>
+
+                <Label text="Age" required="true"/>
+                <Input value="{userModel>/editEntry/age}" placeholder="Enter Age" type="Number"/>
+
+                <Label text="Email" required="true"/>
+                <Input value="{userModel>/editEntry/email}" placeholder="Enter Email"/>
+            </form:content>
+        </form:SimpleForm>
+        <buttons>
+            <Button text="Save" type="Emphasized" press=".onSaveEdit"/>
+            <Button text="Cancel" press=".onCancelEdit"/>
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>

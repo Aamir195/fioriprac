@@ -1,0 +1,77 @@
+<mvc:View
+    controllerName="com.aamir.fiori.app.project1.controller.App"
+    displayBlock="true"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:form="sap.ui.layout.form"
+    xmlns="sap.m">
+    <App id="app">
+        <Page title="User Data Entry">
+            <content>
+                <VBox class="sapUiSmallMargin">
+                    <!-- Form for Data Entry -->
+                    <Title text="Enter User Details" level="H2" class="sapUiSmallMarginBottom"/>
+                    <form:SimpleForm
+                        editable="true"
+                        layout="ResponsiveGridLayout">
+                        <form:content>
+                            <Label text="Name" required="true"/>
+                            <Input value="{userModel>/newEntry/name}" placeholder="Enter Name"/>
+
+                            <Label text="Age" required="true"/>
+                            <Input value="{userModel>/newEntry/age}" placeholder="Enter Age" type="Number"/>
+
+                            <Label text="Email" required="true"/>
+                            <Input value="{userModel>/newEntry/email}" placeholder="Enter Email"/>
+                        </form:content>
+                    </form:SimpleForm>
+
+                    <Button 
+                        text="Add Entry" 
+                        type="Emphasized" 
+                        press=".onAddEntry"
+                        class="sapUiSmallMarginBottom"/>
+
+                    <!-- Table to Display Entered Data -->
+                    <Table
+                        items="{userModel>/users}"
+                        noDataText="No entries available">
+                        <columns>
+                            <Column>
+                                <Text text="Name"/>
+                            </Column>
+                            <Column>
+                                <Text text="Age"/>
+                            </Column>
+                            <Column>
+                                <Text text="Email"/>
+                            </Column>
+                            <Column width="8rem">
+                                <Text text="Actions"/>
+                            </Column>
+                        </columns>
+                        <items>
+                            <ColumnListItem>
+                                <cells>
+                                    <Text text="{userModel>name}"/>
+                                    <Text text="{userModel>age}"/>
+                                    <Text text="{userModel>email}"/>
+                                    <HBox>
+                                        <Button 
+                                            icon="sap-icon://edit" 
+                                            type="Transparent"
+                                            press=".onEditPress"
+                                            class="sapUiTinyMarginEnd"/>
+                                        <Button 
+                                            icon="sap-icon://delete" 
+                                            type="Transparent"
+                                            press=".onDeleteEntry"/>
+                                    </HBox>
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+                </VBox>
+            </content>
+        </Page>
+    </App>
+</mvc:View>
